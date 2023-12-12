@@ -1,11 +1,16 @@
 name = "m5stack"
 main = "src/index.ts"
 compatibility_date = "2023-12-09"
-env = { }
+
 
 [triggers]
-crons = [ ]
+crons = []
 
 [[kv_namespaces]]
 id = "492b03c2685a438e87313db088436a5b"
 binding = "STORE_KV"
+
+[env.production]
+kv_namespaces = [
+    { binding = "STORE_KV", id = "1b0e1b9feff64449b3ab8cee9c6f17d8" },
+]
